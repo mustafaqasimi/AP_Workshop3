@@ -2,6 +2,10 @@ public class Address {
     private String zipCode;
     private String country;
     private String city;
+    public Address() {
+        this.zipCode = "";
+        this.country = "";
+    }
     public Address(String zipCode, String country, String city) {
         this.zipCode = zipCode;
         this.country = country;

@@ -1,8 +1,12 @@
 public class PhoneNumber {
     private String number;
     private String countryCode;
+    public PhoneNumber() {
+        this.number = "";
+        this.countryCode = "";
+    }
     public PhoneNumber(String number, String countryCode) {
-        this.number = number;
+        setNumber(number);
         this.countryCode = countryCode;
     }
     public String getNumber() {
@@ -12,7 +16,10 @@ public class PhoneNumber {
         return countryCode;
     }
     public void setNumber(String number) {
-        this.number = number;
+        if (number.length() == 12){
+            this.number = number;
+        }
+
     }
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
