@@ -23,11 +23,19 @@ public class Main {
                     System.out.print("Enter your email: ");
                     contact.setEmail(scanner.nextLine());
                     System.out.print("Enter your phone number: ");
-                    contact.setPhoneNumber(new PhoneNumber());
-                    contact.getPhoneNumber().setNumber(scanner.nextLine());
+                    PhoneNumber phoneNumber = new PhoneNumber();
+                    phoneNumber.setNumber(scanner.nextLine());
                     System.out.print("Enter your country code: ");
-
-
+                    phoneNumber.setCountryCode(scanner.nextLine());
+                    contact.setPhoneNumber(phoneNumber);
+                    System.out.print("Enter your country: ");
+                    Address address = new Address();
+                    address.setCountry(scanner.nextLine());
+                    System.out.print("Enter your city: ");
+                    address.setCity(scanner.nextLine());
+                    System.out.print("Enter your zip code: ");
+                    address.setZipCode(scanner.nextLine());
+                    contact.setAddress(address);
                     if (pb.addContact(contact).equals("ok"))
                         System.out.println("Contact added");
                     else
@@ -39,7 +47,7 @@ public class Main {
                     if (pb.removeContact(contact).equals("ok"))
                         System.out.println("Contact removed");
                     else
-                        System.out.println("Contact is not available");
+                        System.out.println("Contact is not found");
 
                 } else if (command[0].equals("show") && command[1].equals("-c")) {
                     Contact contact = new Contact();
